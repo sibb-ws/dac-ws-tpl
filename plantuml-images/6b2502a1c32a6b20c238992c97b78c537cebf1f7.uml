@@ -1,0 +1,27 @@
+@startuml
+
+interface java::io::Serializable << interface >>
+class GameObject{
+#name:String
+#GameObject (String)
+}
+interface Buyable <<interface>> {
+
++price():double
+}
+
+interface java::lang::Comparable <<interface>>
+class Magazine{
+-price:double
++Magazine(String,double)
++compareTo(Magazine):int
++price():double
++toString():String
+}
+
+java::io::Serializable   <|..GameObject
+java::lang::Comparable <|.. Magazine
+Buyable <|.. Magazine
+GameObject <|-- Magazine
+
+@enduml
